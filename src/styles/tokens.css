@@ -8,6 +8,19 @@
 #root {
     --font-sans: "OpenSans";
 }
+
+.bg-video {
+  position: fixed;       
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;   
+  z-index: -1;           
+  opacity: 1;     
+  filter: blur(8px);
+  transform: scale(1.05);
+}
 .container {
     height: 100vh; /* this is the max height paramteres, so its expands vertically across the whole page */
     max-width: 1200px;
@@ -58,6 +71,7 @@
   flex: 1;   
   align-items: flex-start;            
 }
+
 .sidebar_box {
   width: fit-content;
   padding: 20px 24px;
@@ -77,18 +91,18 @@
 }
 
 .sidebar button{
-    display: inline-block;
-    background: transparent;
-    border: 0;
-    color: #fff;
-    opacity: 50%;
-    font: var(--font-sans);
-    font-size: 1rem;
-    text-align: left;
-    padding: 2px 4px; 
-    cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.2s ease, text-shadow 0.2s ease;
+  display: inline-block;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  opacity: 50%;
+  font: var(--font-sans);
+  font-size: 1rem;
+  text-align: left;
+  padding: 2px 4px; 
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
 }
 
 .sidebar button:hover {
@@ -96,29 +110,47 @@
     opacity: 100%;
 }
 
+.contact-sidebar {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+  text-align: left;
+  padding: 2px 4px;
+}
+
+.contact-sidebar a {
+  color: white;
+  opacity: 0.6;
+  font-size: 1rem;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.contact-sidebar a:hover {
+  opacity: 1;
+  transform: scale(1.18);
+  cursor: pointer;
+}
+
 .job-row {
-  opacity: 0.5;
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 30px;
-  align-items: start; 
+  align-items: flex-start; 
+  margin-top: 20px;
   margin-bottom: 20px;
   transition: opacity 0.3s ease;
   cursor: default;
+}
 
-}
-.job-row:hover {
-    opacity: 1;
-}
 
 .job-left {
   width: 300px;
   flex-shrink: 1;
 }
 .job-left a{
-    color: white;
-    font-size: 20;
-    text-decoration: underline;
+  color: white;
+  font-size: 20;
+  text-decoration: underline;
 }
 .job-left a:hover{
   cursor: pointer;
@@ -127,8 +159,15 @@
 
 .job-right {
   flex: 1;
+  opacity: 0.5;
   align-self: center; 
   justify-content: center;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.job-right:hover {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .description {
@@ -148,14 +187,15 @@
 
 
 .job-title {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 1.4rem;
+  margin: 0;
+  line-height: 1.4;
+  font-size: 1.4rem;
 }
 .job-dates {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 0.8rem;
+  margin: 0;
+  opacity: 0.5;
+  line-height: 1.4;
+  font-size: 0.8rem;
 }
 
 
@@ -177,9 +217,149 @@
 }
 
 .page-section {
-  padding-bottom: 50px;
+  padding-top: 10px;
   font-family: var(--font-sans);
   font-size: 1.4rem;
   color: #fff;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.skill-area {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.skills_row {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  flex-wrap: wrap;   
+  gap: 20px;      
+  padding-left: 20px;       
+  align-items: center;
+  margin-bottom: 40px; 
+
+} 
+
+.skills_row img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  opacity: 0.5;
+}
+
+.skills_row img:hover {
+  transform: scale(1.12);
+  opacity: 1;
+}
+.skill-text {
+  font-size: 1.1rem;
+  color: white;
+  padding: 16px 22px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.25);
+
+  display: flex;             /* ensures centering */
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  cursor: default;
+}
+
+.skill-text:hover {
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+.envelope-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.envelope-container.open {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+.envelope-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  opacity: 0.8;
+  flex-direction: row;
+  gap: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.envelope-btn:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+.open-me {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  margin-top: -6px; /* closes gap */
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+}
+
+.envelope-container:hover .open-me {
+  transform: translateY(-2px);
+  color: #ffffff;
+  opacity: 1;
+}
+
+.envelope-container:not(.open) {
+  animation: floatTogether 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatTogether {
+  0%   { transform: translateY(0px); }
+  100% { transform: translateY(-6px); }
+}
+
+.open-me {
+  animation: floatText 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+.introduction {
+  max-width: 600px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(8px);
+
+  animation: fadeIn 0.35s ease forwards;
+}
+
+.introduction p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+  
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
