@@ -405,128 +405,63 @@ body, .content, .page-section, .description, .job-skills { font-size: var(--fs-b
 
 /* mob */
 @media (max-width: 768px) {
-  .bg-video {
-    opacity: 0.5;
-    filter: blur(10px);
-    transform: scale(1.06);
-  }
 
+  /* make container tighter */
   .container {
-    height: auto;      
+    padding: 12px 16px;
     min-height: 100vh;
-    padding: 16px 16px 24px;
-    border-radius: 16px;
   }
 
-  .content {
-    gap: 24px;
-    overflow-y: visible;
-  }
-
+  /* make header row smaller */
   .image_row {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .text_block {
-    align-items: center;
-  }
-
-  .image {
-    width: 160px !important;
-    height: 160px !important;
-  }
-
-  .body_row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
-  }
-
-  .sidebar_box {
-    order: 0;
-    padding: 12px 14px;
-  }
-
-  .scroll_panel {
-    order: 1;
-    flex: 1;
-    height: auto;
-    max-height: calc(100vh - 260px);
-    overflow-y: auto;
-    padding-right: 6px;
-  }
-
-  .page_section {
-    padding-top: 6px;
-    padding-bottom: 12px;
-    margin-bottom: 8px;
-    font-size: 1.1rem;
-  }
-  .job_row {
-    grid-template-columns: 1fr;
-    row-gap: 10px;
-    margin-top: 12px;
-    margin-bottom: 24px;
-  }
-
-  .job_left {
-    width: 100%;
-  }
-
-  .job_right {
-    opacity: 0.9;
-    align-self: flex-start;
-    justify-content: flex-start;
-    transform: none;
-  }
-
-  .job_right:hover {
-    transform: none; 
-  }
-
-  .job_title {
-    font-size: 1.1rem;
-  }
-
-  .job_dates {
-    font-size: 0.8rem;
-  }
-
-  .skill_area {
-    margin-top: 10px;
-    font-size: 1.05rem;
-  }
-
-  .skills_row {
-    justify-content: center;
-    gap: 14px;
-    padding-left: 0;
-  }
-
-  .skills_row img {
-    width: 64px;
-    height: 64px;
-  }
-
-  .skill_text {
-    padding: 10px 14px;
-    font-size: 0.95rem;
-  }
-
-  .envelope_container,
-  .envelope_container.open {
-    flex-direction: row;
-    align-items: flex-start;
     gap: 10px;
-    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
-  .introduction {
-    max-width: 100%;
-    padding: 12px 14px;
-    font-size: 0.95rem;
+  /* smaller avatar */
+  .image {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  /* smaller name + title */
+  .text_block h2 {
+    font-size: 1.25rem !important;
+  }
+  .text_block h1 {
+    font-size: 1.55rem !important;
+  }
+
+  /* compress sidebar bar */
+  .sidebar_box {
+    padding: 8px 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.25);
+    margin-bottom: 8px;
+  }
+
+  /* smaller, tighter buttons */
+  .sidebar button {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+    opacity: 0.8;
+  }
+
+  /* sidebar in one tight row instead of a big block */
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 10px;
+  }
+
+  /* Content gets the biggest slice of the screen */
+  .scroll_panel {
+    max-height: calc(100vh - 240px); 
+    overflow-y: auto;
+    padding-right: 4px;
   }
 }
 
