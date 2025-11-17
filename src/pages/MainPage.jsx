@@ -69,15 +69,15 @@ export default function MainPage() {
                                     <button onClick={() => scrollTo(projectsRef)}><AiOutlineProject />&nbsp;Projects</button>
                                     <button onClick={() => scrollTo(edRef)}><IoRoseOutline />&nbsp;Education</button>
                                 </nav> 
-                                <div className="contact-sidebar">
+                                <div className="contact_sidebar">
                                     <a href="mailto:anavidova@gmail.com" target="_blank" rel="noreferrer"><FiMail /></a>
                                     <a href="https://www.linkedin.com/in/ana-vidova/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
                                 </div> 
                             </div>
                             <div className="scroll_panel">
-                                 <div className={`envelope-container  ${isOpen ? "open" : ""}`}>
+                                 <div className={`envelope_container  ${isOpen ? "open" : ""}`}>
                                             {!isOpen && (<p className='open-me'>Open me :D</p>)}
-                                            <button className="envelope-btn" onClick={() => setIsOpen(!isOpen)}>
+                                            <button className="envelope_btn" onClick={() => setIsOpen(!isOpen)}>
                                             {isOpen ? <IoMailOpenOutline size={60}/> : <IoMailOutline size={60}/>}
                                             </button>
                                             {isOpen && (
@@ -92,7 +92,7 @@ export default function MainPage() {
                                             </div>
                                             )}
                                         </div>
-                                <section ref={expRef} className="page-section">
+                                <section ref={expRef} className="page_section">
                                      <p>
                                         <TypeAnimation
                                         sequence={[
@@ -103,53 +103,53 @@ export default function MainPage() {
                                         />
                                     </p>
                                 </section>
-                                    <div className='job-row'>
-                                        <div className='job-left'>
-                                            <p className='job-title'>Full-Stack Developer</p>
+                                    <div className='job_row'>
+                                        <div className='job_left'>
+                                            <p className='job_title'>Full-Stack Developer</p>
                                             <a href="https://ivuworks.com/" target="_blank" rel="noopener noreferrer">IvuWorks, Sofia</a>
-                                            <p className='job-dates'>September 2025</p>
+                                            <p className='job_dates'>September 2025</p>
                                         </div>
-                                        <div className='job-right'>
+                                        <div className='job_right'>
                                             <p className='description'>Developing software for clients. Currently building "Offer craft": Helping businesses focus on growth, not paperowrk.</p>
-                                            <p className='job-skills'>React | Django | Debian | MySQL</p>
+                                            <p className='job_skills'>React | Django | Debian | MySQL</p>
                                         </div>                  
                                     </div>
-                                    <div className='job-row'>
-                                        <div className='job-left'>
-                                            <p className='job-title'>Full-Stack Intern</p>
+                                    <div className='job_row'>
+                                        <div className='job_left'>
+                                            <p className='job_title'>Full-Stack Intern</p>
                                             <a href="https://refracted.eu/" target="_blank" rel="noopener noreferrer">Refracted, Lier</a>
-                                            <p className='job-dates'>Feb - June 2025</p>
+                                            <p className='job_dates'>Feb - June 2025</p>
                                         </div>
-                                        <div className='job-right'>
+                                        <div className='job_right'>
                                             <p className='description'>Developed an administrative portal and content delivery system to manage vital application statistics and administrative tasks.</p>
-                                            <p className='job-skills'>React | NestJS | PostgreSQL | Prisma | Azure</p>
+                                            <p className='job_skills'>React | NestJS | PostgreSQL | Prisma | Azure</p>
                                         </div>                  
                                     </div>
 
-                                    <div className='job-row'>
-                                        <div className='job-left'>
-                                            <p className='job-title'>Human Resources</p>
+                                    <div className='job_row'>
+                                        <div className='job_left'>
+                                            <p className='job_title'>Human Resources</p>
                                             <a href="https://www.instagram.com/esn_mechelen/" target='_blank' rel="noopener noreferrer">ESN Mechelen</a>
-                                            <p className='job-dates'>Feb - June 2024</p>
+                                            <p className='job_dates'>Feb - June 2024</p>
                                         </div>
-                                        <div className='job-right'>
+                                        <div className='job_right'>
                                             <p className='description'>Managing and taking care of 20+ volunteers by creating a healthy work environment, organising  team buildings and workshops for team balance, coordination and growth.</p>
-                                            <p className='job-skills'>Leadership | Feedback | Event | Management | Collaborations</p>
+                                            <p className='job_skills'>Leadership | Feedback | Event | Management | Collaborations</p>
                                         </div>                  
                                     </div>
-                                    <div className='job-row'>
-                                        <div className='job-left'>
-                                            <p className='job-title'>Project Management</p>
+                                    <div className='job_row'>
+                                        <div className='job_left'>
+                                            <p className='job_title'>Project Management</p>
                                             <a href="https://www.instagram.com/esn_mechelen/" target='_blank' rel="noopener noreferrer">ESN Mechelen</a>
-                                            <p className='job-dates'>Sep 2024 - Jan 2025</p>
+                                            <p className='job_dates'>Sep 2024 - Jan 2025</p>
                                         </div>
-                                        <div className='job-right'>
+                                        <div className='job_right'>
                                             <p className='description'>Organising large-scale events for 50+ international students.</p>
-                                            <p className='job-skills'>Google Forms | MS Office | Miro board </p>
+                                            <p className='job_skills'>Google Forms | MS Office | Miro board </p>
                                         </div>                  
                                     </div>
                                 {/* SKILLS */}
-                                <section ref={skillsRef} className="page-section">
+                                <section ref={skillsRef} className="page_section">
                                     <p>
                                         <TypeAnimation
                                         sequence={[
@@ -160,7 +160,7 @@ export default function MainPage() {
                                         />
                                     </p>
                                 </section>
-                                    <p className='skill-area'>Full-stack</p>
+                                    <p className='skill_area'>Full-stack</p>
                                     <div className='skills_row'>
                                         <img src={react} alt="React" />
                                         <img src={vuejs} alt="VueJS" />
@@ -183,7 +183,7 @@ export default function MainPage() {
                                         <img src={github} alt="GitHub" />
                                         <img src={debian} alt="Debian" />
                                     </div>
-                                    <p className='skill-area'>Data science</p>
+                                    <p className='skill_area'>Data science</p>
                                     <div className='skills_row'>
                                         <img src={python} alt="Python" />
                                         <img src={powerbi} alt="PowerBI" />
@@ -192,14 +192,14 @@ export default function MainPage() {
                                         <p className="skill-text">AI</p>
                                         <p className="skill-text">Business Intelligence</p>
                                     </div>
-                                    <p className='skill-area'>Software proficiency</p>
+                                    <p className='skill_area'>Software proficiency</p>
                                     <div className='skills_row'>
                                         <img src={python} alt="Python" />
                                         <img src={c_sharp} alt="C_Sharp" />
                                         <img src={sap} alt="SAP" />
                                         <img src={office} alt="MS_Office" />
                                     </div>
-                                    <p className='skill-area'>Business and Management</p>
+                                    <p className='skill_area'>Business and Management</p>
                                     <div className='skills_row'>
                                         <p className='skill-text'>Leadership</p>
                                         <p className='skill-text'>Finances</p>
@@ -208,13 +208,13 @@ export default function MainPage() {
                                         <p className='skill-text'>Slack</p>
                                         <p className='skill-text'>Google Forms</p>
                                     </div>
-                                    <p className='skill-area'>Design</p>
+                                    <p className='skill_area'>Design</p>
                                     <div className='skills_row'>
                                         <img src={canva} alt="Canva" />
                                         <img src={adobe} alt="Adobe_PS" />
                                         <img src={procreate} alt="Procreate" />
                                     </div>
-                                <section ref={projectsRef} className="page-section">
+                                <section ref={projectsRef} className="page_section">
                                     <p>
                                         <TypeAnimation
                                         sequence={[
@@ -231,7 +231,7 @@ export default function MainPage() {
                                     <p><b>Bank application</b> - C#(.NET Core, MySQL)</p>
                                     <p><b>Dating app website</b> - HTML, CSS, JavaScript, PHP, MySQL</p>
                                     <p><b>Camping Airbnb website</b> - Vue.js, ASP.NET Core, MySQL</p>
-                                <section ref={edRef} className="page-section">
+                                <section ref={edRef} className="page_section">
                                     <p>
                                         <TypeAnimation
                                         sequence={[
