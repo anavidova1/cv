@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cv/static/css/main.e27358a0.css",
-    "main.js": "/cv/static/js/main.466caacf.js",
+    "main.css": "/cv/static/css/main.c40f03b7.css",
+    "main.js": "/cv/static/js/main.57bfb66d.js",
     "static/media/background_video.mp4": "/cv/static/media/background_video.d611fc05a5af788cf742.mp4",
     "static/media/canva.png": "/cv/static/media/canva.9314e66982e8bd7b19d0.png",
     "static/media/PowerBI.png": "/cv/static/media/PowerBI.dd5dfe0124c343b79473.png",
@@ -27,11 +27,11 @@
     "static/media/prisma.svg": "/cv/static/media/prisma.1c35507bd4734196c29f749a708882f7.svg",
     "static/media/SAP.svg": "/cv/static/media/SAP.c5952e54623aad4c8fa92667ef9cf182.svg",
     "index.html": "/cv/index.html",
-    "main.e27358a0.css.map": "/cv/static/css/main.e27358a0.css.map",
-    "main.466caacf.js.map": "/cv/static/js/main.466caacf.js.map"
+    "main.c40f03b7.css.map": "/cv/static/css/main.c40f03b7.css.map",
+    "main.57bfb66d.js.map": "/cv/static/js/main.57bfb66d.js.map"
   },
   "entrypoints": [
-    "static/css/main.e27358a0.css",
-    "static/js/main.466caacf.js"
+    "static/css/main.c40f03b7.css",
+    "static/js/main.57bfb66d.js"
   ]
 }
