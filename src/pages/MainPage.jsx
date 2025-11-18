@@ -1,6 +1,6 @@
 import pfp from '../assets/CV_pfp.jpeg'
 import '../styles/tokens.css'
-import { use, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MdWork } from "react-icons/md";
 import { FaTools } from "react-icons/fa";
 import { AiOutlineProject } from "react-icons/ai";
@@ -35,7 +35,7 @@ import ASP_NET from "../assets/asp_net.png"
 import adobe from "../assets/Adobe_PS.png"
 import html from "../assets/HTML.png"
 
-
+// eslint-disable-next-line
 
 
 
@@ -46,6 +46,27 @@ export default function MainPage() {
     const projectsRef = useRef(null);
     const edRef = useRef(null);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                } else {
+                     entry.target.classList.remove("active");
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0,  
+            rootMargin: "-40% 0px -40% 0px" 
+        });
+        const rows = document.querySelectorAll(".skills_row");
+
+        rows.forEach(row => observer.observe(row));
+
+        return () => observer.disconnect();
+    }, []);
+
     const scrollTo = (ref) => {
         ref?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     };
@@ -55,7 +76,7 @@ export default function MainPage() {
                 <div className='container'>
                     <div className='content'>
                         <div className='image_row'>
-                            <img className='image' src={pfp} style={{height: 200, width: 200, objectFit: 'cover', borderRadius: "50%"}} />
+                            <img className='image' alt="Profile" src={pfp} style={{height: 200, width: 200, objectFit: 'cover', borderRadius: "50%"}} />
                             <div className='text_block' style={{alignItems: "flex-start"}}>
                                 <h2 style={{fontSize: 40}}>Ana Vidova</h2>
                                 <h1 style={{fontSize: 50}}>Data | Development | Security</h1>                           
@@ -110,8 +131,8 @@ export default function MainPage() {
                                             <p className='job_dates'>September 2025</p>
                                         </div>
                                         <div className='job_right'>
-                                            <p className='description'>Developing software for clients. Currently building "Offer craft": Helping businesses focus on growth, not paperowrk.</p>
-                                            <p className='job_skills'>React | Django | Debian | MySQL</p>
+                                            <p className='description'>Developing software for clients. Currently building "Offer craft": Helping businesses focus on growth, not paperwork.</p>
+                                            <p className='job_skills'>React | Django | Debian | PostgreSQL</p>
                                         </div>                  
                                     </div>
                                     <div className='job_row'>
@@ -188,9 +209,9 @@ export default function MainPage() {
                                         <img src={python} alt="Python" />
                                         <img src={powerbi} alt="PowerBI" />
                                         <img src={google_analytics} alt="Google_Analytics" />
-                                        <p className="skill-text">Machine Learning</p>
-                                        <p className="skill-text">AI</p>
-                                        <p className="skill-text">Business Intelligence</p>
+                                        <p className="skill_text">Machine Learning</p>
+                                        <p className="skill_text">AI</p>
+                                        <p className="skill_text">Business Intelligence</p>
                                     </div>
                                     <p className='skill_area'>Software proficiency</p>
                                     <div className='skills_row'>
@@ -201,12 +222,12 @@ export default function MainPage() {
                                     </div>
                                     <p className='skill_area'>Business and Management</p>
                                     <div className='skills_row'>
-                                        <p className='skill-text'>Leadership</p>
-                                        <p className='skill-text'>Finances</p>
-                                        <p className='skill-text'>Project Management</p>
-                                        <p className='skill-text'>Human Resources</p>
-                                        <p className='skill-text'>Slack</p>
-                                        <p className='skill-text'>Google Forms</p>
+                                        <p className='skill_text'>Leadership</p>
+                                        <p className='skill_text'>Finances</p>
+                                        <p className='skill_text'>Project Management</p>
+                                        <p className='skill_text'>Human Resources</p>
+                                        <p className='skill_text'>Slack</p>
+                                        <p className='skill_text'>Google Forms</p>
                                     </div>
                                     <p className='skill_area'>Design</p>
                                     <div className='skills_row'>

@@ -42,14 +42,14 @@ body, .content, .page-section, .description, .job-skills { font-size: var(--fs-b
 
 }
 .content {
-    color: white;
-    flex: 1;          
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    overflow-y: auto;     
-    scroll-behavior: smooth;
-    font: var(--font-sans);
+  color: white;
+  flex: 1;          
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow-y: auto;     
+  scroll-behavior: smooth;
+  font: var(--font-sans);
 }
 
 .image_row {
@@ -216,7 +216,7 @@ body, .content, .page-section, .description, .job-skills { font-size: var(--fs-b
   flex: 1;
   height: 100%;
   min-width: 0;
-  overflow-y: auto;
+  overflow-y: visible;
   scroll-behavior: smooth;
   padding-right: 10px;
   margin-top: 0;
@@ -229,6 +229,7 @@ body, .content, .page-section, .description, .job-skills { font-size: var(--fs-b
   font-size: 1.4rem;
   color: #fff;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  scroll-margin-top: 100px;
 }
 
 
@@ -242,14 +243,20 @@ body, .content, .page-section, .description, .job-skills { font-size: var(--fs-b
 .skills_row {
   display: flex;
   grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-  flex-wrap: wrap;   
-  gap: 20px;      
-  padding-left: 20px;       
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-left: 20px;
   align-items: center;
-  margin-bottom: 40px; 
-
-} 
-
+  margin-bottom: 40px;
+}
+.skill_row:active{
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+.skills_row.active img {
+  opacity: 1;
+  transform: scale(1.08);
+}
 .skills_row img {
   width: 80px;
   height: 80px;
@@ -269,8 +276,6 @@ body, .content, .page-section, .description, .job-skills { font-size: var(--fs-b
   border-radius: 12px;
   background: rgba(255,255,255,0.12);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.25);
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -371,124 +376,125 @@ body, .content, .page-section, .description, .job-skills { font-size: var(--fs-b
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 1024px) {
-  .container {
-    max-width: 100%;
-    padding: 24px;
-    border-radius: 16px;
-  }
-
-  .body_row {
-    gap: 20px;
-  }
-
-  .sidebar_box {
-    width: 100%;
-    align-self: stretch;
-    display: flex;
-    justify-content: center;
-  }
-
-  .sidebar {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 16px;
-  }
-
-  .sidebar button {
-    font-size: 0.95rem;
-    padding: 8px 10px;
-  }
-}
-
-
 /* mob */
-@media (max-width: 768px) {
-
-  /* make container tighter */
+@media (max-width: 800px) {
   .container {
-    padding: 12px 16px;
+    height: auto;         
     min-height: 100vh;
+    padding: 16px 16px 24px;
+    border-radius: 16px;   
+    overflow: visible; 
   }
 
-  /* make header row smaller */
+  .content {
+    overflow-y: visible;  
+    gap: 10px;   
+  }
+
   .image_row {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 10px;
   }
 
-  /* smaller avatar */
   .image {
     width: 120px !important;
     height: 120px !important;
   }
 
-  /* smaller name + title */
   .text_block h2 {
     font-size: 1.25rem !important;
   }
+
   .text_block h1 {
     font-size: 1.55rem !important;
   }
 
-  /* compress sidebar bar */
-  .sidebar_box {
-    padding: 8px 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255,255,255,0.12);
-    background: rgba(0,0,0,0.25);
-    margin-bottom: 8px;
+  .body_row {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* smaller, tighter buttons */
+  .sidebar_box {
+    width: 88%;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(30px);
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0px;
+    z-index: 20;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 6px 10px;
+  }
+
   .sidebar button {
     font-size: 0.85rem;
     padding: 6px 8px;
     opacity: 0.8;
   }
 
-  /* sidebar in one tight row instead of a big block */
-  .sidebar {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px 10px;
-  }
-
-  /* Content gets the biggest slice of the screen */
   .scroll_panel {
-    max-height: calc(100vh - 240px); 
-    overflow-y: auto;
-    padding-right: 4px;
-  }
-}
-
-
-/* sm phones*/
-@media (max-width: 480px) {
-  .container {
-    padding: 12px 12px 20px;
-    border-radius: 12px;
+    max-height: none;
+    height: auto;
+    overflow-y: visible;
+    padding-right: 0;
   }
 
-  .sidebar_box {
-    padding: 8px 10px;
-    border-radius: 10px;
+  .job_row {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
   }
 
-  .sidebar button {
-    font-size: 0.9rem;
-    padding: 6px 8px;
+  .description {
+    font-size: 1rem;
+  }
+
+  .job_right:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .job_skills {
+    font-size: 1rem;
+  }
+
+  .page_section {
+    padding-top: 10px;
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    
+  }
+
+  .skill_area {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
   }
 
   .skills_row {
-    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 0;
+    align-items: center;
+    margin-bottom: 40px;
   }
 
-  .skills_row img {
-    width: 56px;
-    height: 56px;
+  .skill_text {
+    font-size: 0.9rem;
+    padding: 12px 18px;
   }
 }
